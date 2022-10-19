@@ -18,7 +18,7 @@ plot(data$sepal_len,pred1)
 
 for (sp in unique(data$species))
 {
-  cat(sprintf("mean(sepal_len) for %s = %s\n",sp,mean(data[data$species==sp,"sepal_len"])))
+  cat(sprintf("mean(sepal_len) for %s = %s\n",sp,mean(data[data$species==sp,"sepal_len"]))) # nolint
 }
 
 print(head(data))
@@ -68,7 +68,7 @@ plot(data$sepal_len,pred3b)
 # make virginica the default factor level
 
 data2 = data
-data2$species = relevel(data2$species,ref="Iris-versicolor")
+data2$species = relevel(factor(data2$species),ref="Iris-versicolor")
 mod3c = lm(sepal_len ~ sepal_wid+species,data=data2)
 print("mod3c")
 print(summary(mod3c))
