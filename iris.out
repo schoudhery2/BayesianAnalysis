@@ -1,0 +1,180 @@
+mean(sepal_len) for Iris-setosa = 5.006
+mean(sepal_len) for Iris-versicolor = 5.936
+mean(sepal_len) for Iris-virginica = 6.588
+  sepal_len sepal_wid petal_len petal_wid     species
+1       5.1       3.5       1.4       0.2 Iris-setosa
+2       4.9       3.0       1.4       0.2 Iris-setosa
+3       4.7       3.2       1.3       0.2 Iris-setosa
+4       4.6       3.1       1.5       0.2 Iris-setosa
+5       5.0       3.6       1.4       0.2 Iris-setosa
+6       5.4       3.9       1.7       0.4 Iris-setosa
+    sepal_len sepal_wid petal_len petal_wid        species versicolor virginica setosa
+145       6.7       3.3       5.7       2.5 Iris-virginica          0         1      0
+146       6.7       3.0       5.2       2.3 Iris-virginica          0         1      0
+147       6.3       2.5       5.0       1.9 Iris-virginica          0         1      0
+148       6.5       3.0       5.2       2.0 Iris-virginica          0         1      0
+149       6.2       3.4       5.4       2.3 Iris-virginica          0         1      0
+150       5.9       3.0       5.1       1.8 Iris-virginica          0         1      0
+[1] "mod2"
+
+Call:
+lm(formula = sepal_len ~ sepal_wid, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.5546 -0.6397 -0.1106  0.5569  2.2125 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   6.4812     0.4813  13.466   <2e-16 ***
+sepal_wid    -0.2089     0.1560  -1.339    0.183    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.8259 on 148 degrees of freedom
+Multiple R-squared:  0.01196,	Adjusted R-squared:  0.005286 
+F-statistic: 1.792 on 1 and 148 DF,  p-value: 0.1828
+
+[1] "mod3"
+
+Call:
+lm(formula = sepal_len ~ sepal_wid + species, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.30727 -0.25713 -0.04824  0.19053  1.41241 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             2.26056    0.36769   6.148 7.12e-09 ***
+sepal_wid               0.80323    0.10604   7.575 3.79e-12 ***
+speciesIris-versicolor  1.45049    0.11128  13.035  < 2e-16 ***
+speciesIris-virginica   1.93863    0.09939  19.505  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4377 on 146 degrees of freedom
+Multiple R-squared:  0.7263,	Adjusted R-squared:  0.7207 
+F-statistic: 129.1 on 3 and 146 DF,  p-value: < 2.2e-16
+
+[1] "mod3b"
+
+Call:
+lm(formula = sepal_len ~ 0 + sepal_wid + species, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.30727 -0.25713 -0.04824  0.19053  1.41241 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+sepal_wid                0.8032     0.1060   7.575 3.79e-12 ***
+speciesIris-setosa       2.2606     0.3677   6.148 7.12e-09 ***
+speciesIris-versicolor   3.7111     0.3002  12.363  < 2e-16 ***
+speciesIris-virginica    4.1992     0.3214  13.066  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4377 on 146 degrees of freedom
+Multiple R-squared:  0.9946,	Adjusted R-squared:  0.9945 
+F-statistic:  6782 on 4 and 146 DF,  p-value: < 2.2e-16
+
+[1] "mod3c"
+
+Call:
+lm(formula = sepal_len ~ sepal_wid + species, data = data2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.30727 -0.25713 -0.04824  0.19053  1.41241 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            3.71106    0.30018  12.363  < 2e-16 ***
+sepal_wid              0.80323    0.10604   7.575 3.79e-12 ***
+speciesIris-setosa    -1.45049    0.11128 -13.035  < 2e-16 ***
+speciesIris-virginica  0.48814    0.09017   5.414 2.48e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4377 on 146 degrees of freedom
+Multiple R-squared:  0.7263,	Adjusted R-squared:  0.7207 
+F-statistic: 129.1 on 3 and 146 DF,  p-value: < 2.2e-16
+
+[1] "mod4"
+
+Call:
+lm(formula = sepal_len ~ sepal_wid + setosa + virginica + versicolor, 
+    data = coded)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.30727 -0.25713 -0.04824  0.19053  1.41241 
+
+Coefficients: (1 not defined because of singularities)
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.71106    0.30018  12.363  < 2e-16 ***
+sepal_wid    0.80323    0.10604   7.575 3.79e-12 ***
+setosa      -1.45049    0.11128 -13.035  < 2e-16 ***
+virginica    0.48814    0.09017   5.414 2.48e-07 ***
+versicolor        NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4377 on 146 degrees of freedom
+Multiple R-squared:  0.7263,	Adjusted R-squared:  0.7207 
+F-statistic: 129.1 on 3 and 146 DF,  p-value: < 2.2e-16
+
+[1] "mod5"
+
+Call:
+lm(formula = sepal_len ~ 0 + sepal_wid + setosa + virginica + 
+    versicolor, data = coded)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.30727 -0.25713 -0.04824  0.19053  1.41241 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+sepal_wid    0.8032     0.1060   7.575 3.79e-12 ***
+setosa       2.2606     0.3677   6.148 7.12e-09 ***
+virginica    4.1992     0.3214  13.066  < 2e-16 ***
+versicolor   3.7111     0.3002  12.363  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4377 on 146 degrees of freedom
+Multiple R-squared:  0.9946,	Adjusted R-squared:  0.9945 
+F-statistic:  6782 on 4 and 146 DF,  p-value: < 2.2e-16
+
+  sepal_len sepal_wid petal_len petal_wid     species versicolor  virginica    setosa
+1       5.1       3.5       1.4       0.2 Iris-setosa -0.3333333 -0.3333333 0.6666667
+2       4.9       3.0       1.4       0.2 Iris-setosa -0.3333333 -0.3333333 0.6666667
+3       4.7       3.2       1.3       0.2 Iris-setosa -0.3333333 -0.3333333 0.6666667
+4       4.6       3.1       1.5       0.2 Iris-setosa -0.3333333 -0.3333333 0.6666667
+5       5.0       3.6       1.4       0.2 Iris-setosa -0.3333333 -0.3333333 0.6666667
+6       5.4       3.9       1.7       0.4 Iris-setosa -0.3333333 -0.3333333 0.6666667
+[1] "mod6"
+
+Call:
+lm(formula = sepal_len ~ 0 + sepal_wid + setosa + virginica + 
+    versicolor, data = coded2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.15661 -0.32631  0.05118  0.34618  1.86338 
+
+Coefficients: (1 not defined because of singularities)
+           Estimate Std. Error t value Pr(>|t|)    
+sepal_wid    1.9000     0.0153 124.211   <2e-16 ***
+setosa      -2.1612     0.1155 -18.704   <2e-16 ***
+virginica    0.2644     0.1152   2.296   0.0231 *  
+versicolor       NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5756 on 147 degrees of freedom
+Multiple R-squared:  0.9907,	Adjusted R-squared:  0.9905 
+F-statistic:  5206 on 3 and 147 DF,  p-value: < 2.2e-16
+
