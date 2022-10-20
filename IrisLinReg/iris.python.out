@@ -1,0 +1,233 @@
+mean(sepal_len) for Iris-versicolor = 5.936
+mean(sepal_len) for Iris-virginica = 6.587999999999998
+mean(sepal_len) for Iris-setosa = 5.006
+     sepal_len  sepal_wid  petal_len  ...  versicolor setosa  virginica
+0          5.1        3.5        1.4  ...           0      0          0
+1          4.9        3.0        1.4  ...           0      0          0
+2          4.7        3.2        1.3  ...           0      0          0
+3          4.6        3.1        1.5  ...           0      0          0
+4          5.0        3.6        1.4  ...           0      0          0
+..         ...        ...        ...  ...         ...    ...        ...
+145        6.7        3.0        5.2  ...           0      0          0
+146        6.3        2.5        5.0  ...           0      0          0
+147        6.5        3.0        5.2  ...           0      0          0
+148        6.2        3.4        5.4  ...           0      0          0
+149        5.9        3.0        5.1  ...           0      0          0
+
+[150 rows x 8 columns]
+mod2
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.012
+Model:                            OLS   Adj. R-squared:                  0.005
+Method:                 Least Squares   F-statistic:                     1.792
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):              0.183
+Time:                        16:59:02   Log-Likelihood:                -183.14
+No. Observations:                 150   AIC:                             370.3
+Df Residuals:                     148   BIC:                             376.3
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      6.4812      0.481     13.466      0.000       5.530       7.432
+sepal_wid     -0.2089      0.156     -1.339      0.183      -0.517       0.099
+==============================================================================
+Omnibus:                        4.455   Durbin-Watson:                   0.941
+Prob(Omnibus):                  0.108   Jarque-Bera (JB):                4.252
+Skew:                           0.356   Prob(JB):                        0.119
+Kurtosis:                       2.585   Cond. No.                         24.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+mod3
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.726
+Model:                            OLS   Adj. R-squared:                  0.721
+Method:                 Least Squares   F-statistic:                     129.1
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):           6.94e-41
+Time:                        16:59:02   Log-Likelihood:                -86.866
+No. Observations:                 150   AIC:                             181.7
+Df Residuals:                     146   BIC:                             193.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================================
+                                 coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+Intercept                      2.2606      0.368      6.148      0.000       1.534       2.987
+species[T.Iris-versicolor]     1.4505      0.111     13.035      0.000       1.231       1.670
+species[T.Iris-virginica]      1.9386      0.099     19.505      0.000       1.742       2.135
+sepal_wid                      0.8032      0.106      7.575      0.000       0.594       1.013
+==============================================================================
+Omnibus:                        7.497   Durbin-Watson:                   2.061
+Prob(Omnibus):                  0.024   Jarque-Bera (JB):                7.644
+Skew:                           0.420   Prob(JB):                       0.0219
+Kurtosis:                       3.719   Cond. No.                         36.1
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+mod3b
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.726
+Model:                            OLS   Adj. R-squared:                  0.721
+Method:                 Least Squares   F-statistic:                     129.1
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):           6.94e-41
+Time:                        16:59:02   Log-Likelihood:                -86.866
+No. Observations:                 150   AIC:                             181.7
+Df Residuals:                     146   BIC:                             193.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+species[Iris-setosa]         2.2606      0.368      6.148      0.000       1.534       2.987
+species[Iris-versicolor]     3.7111      0.300     12.363      0.000       3.118       4.304
+species[Iris-virginica]      4.1992      0.321     13.066      0.000       3.564       4.834
+sepal_wid                    0.8032      0.106      7.575      0.000       0.594       1.013
+==============================================================================
+Omnibus:                        7.497   Durbin-Watson:                   2.061
+Prob(Omnibus):                  0.024   Jarque-Bera (JB):                7.644
+Skew:                           0.420   Prob(JB):                       0.0219
+Kurtosis:                       3.719   Cond. No.                         50.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+mod3c
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.726
+Model:                            OLS   Adj. R-squared:                  0.721
+Method:                 Least Squares   F-statistic:                     129.1
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):           6.94e-41
+Time:                        16:59:02   Log-Likelihood:                -86.866
+No. Observations:                 150   AIC:                             181.7
+Df Residuals:                     146   BIC:                             193.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+========================================================================================================================================
+                                                                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                3.7111      0.300     12.363      0.000       3.118       4.304
+C(species, Treatment(reference="Iris-versicolor"))[T.Iris-setosa]       -1.4505      0.111    -13.035      0.000      -1.670      -1.231
+C(species, Treatment(reference="Iris-versicolor"))[T.Iris-virginica]     0.4881      0.090      5.414      0.000       0.310       0.666
+sepal_wid                                                                0.8032      0.106      7.575      0.000       0.594       1.013
+==============================================================================
+Omnibus:                        7.497   Durbin-Watson:                   2.061
+Prob(Omnibus):                  0.024   Jarque-Bera (JB):                7.644
+Skew:                           0.420   Prob(JB):                       0.0219
+Kurtosis:                       3.719   Cond. No.                         29.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+mod4
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.012
+Model:                            OLS   Adj. R-squared:                  0.005
+Method:                 Least Squares   F-statistic:                     1.792
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):              0.183
+Time:                        16:59:02   Log-Likelihood:                -183.14
+No. Observations:                 150   AIC:                             370.3
+Df Residuals:                     148   BIC:                             376.3
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      6.4812      0.481     13.466      0.000       5.530       7.432
+sepal_wid     -0.2089      0.156     -1.339      0.183      -0.517       0.099
+setosa              0          0        nan        nan           0           0
+virginica           0          0        nan        nan           0           0
+versicolor          0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                        4.455   Durbin-Watson:                   0.941
+Prob(Omnibus):                  0.108   Jarque-Bera (JB):                4.252
+Skew:                           0.356   Prob(JB):                        0.119
+Kurtosis:                       2.585   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+mod5
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              sepal_len   R-squared (uncentered):                   0.957
+Model:                            OLS   Adj. R-squared (uncentered):              0.957
+Method:                 Least Squares   F-statistic:                              3316.
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):                   1.04e-103
+Time:                        16:59:02   Log-Likelihood:                         -243.13
+No. Observations:                 150   AIC:                                      488.3
+Df Residuals:                     149   BIC:                                      491.3
+Df Model:                           1                                                  
+Covariance Type:            nonrobust                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+sepal_wid      1.8717      0.033     57.585      0.000       1.807       1.936
+setosa              0          0        nan        nan           0           0
+virginica           0          0        nan        nan           0           0
+versicolor          0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                       16.884   Durbin-Watson:                   0.429
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                7.669
+Skew:                          -0.336   Prob(JB):                       0.0216
+Kurtosis:                       2.120   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[3] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+     sepal_len  sepal_wid  petal_len  ...  versicolor    setosa  virginica
+0          5.1        3.5        1.4  ...   -0.333333 -0.333333  -0.333333
+1          4.9        3.0        1.4  ...   -0.333333 -0.333333  -0.333333
+2          4.7        3.2        1.3  ...   -0.333333 -0.333333  -0.333333
+3          4.6        3.1        1.5  ...   -0.333333 -0.333333  -0.333333
+4          5.0        3.6        1.4  ...   -0.333333 -0.333333  -0.333333
+..         ...        ...        ...  ...         ...       ...        ...
+145        6.7        3.0        5.2  ...   -0.333333 -0.333333  -0.333333
+146        6.3        2.5        5.0  ...   -0.333333 -0.333333  -0.333333
+147        6.5        3.0        5.2  ...   -0.333333 -0.333333  -0.333333
+148        6.2        3.4        5.4  ...   -0.333333 -0.333333  -0.333333
+149        5.9        3.0        5.1  ...   -0.333333 -0.333333  -0.333333
+
+[150 rows x 8 columns]
+mod6
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              sepal_len   R-squared:                       0.012
+Model:                            OLS   Adj. R-squared:                  0.005
+Method:                 Least Squares   F-statistic:                     1.792
+Date:                Wed, 19 Oct 2022   Prob (F-statistic):              0.183
+Time:                        16:59:02   Log-Likelihood:                -183.14
+No. Observations:                 150   AIC:                             370.3
+Df Residuals:                     148   BIC:                             376.3
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+sepal_wid     -0.2089      0.156     -1.339      0.183      -0.517       0.099
+setosa        -6.4812      0.481    -13.466      0.000      -7.432      -5.530
+virginica     -6.4812      0.481    -13.466      0.000      -7.432      -5.530
+versicolor    -6.4812      0.481    -13.466      0.000      -7.432      -5.530
+==============================================================================
+Omnibus:                        4.455   Durbin-Watson:                   0.941
+Prob(Omnibus):                  0.108   Jarque-Bera (JB):                4.252
+Skew:                           0.356   Prob(JB):                        0.119
+Kurtosis:                       2.585   Cond. No.                     8.14e+31
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is 2.23e-61. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
