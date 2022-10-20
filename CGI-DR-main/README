@@ -1,0 +1,59 @@
+> python extract_abund.py <drug> <days> 
+  outputs fractional abundances for each sgRNA for all concs and reps
+  individual datasets are normalized
+  "fractional abunance" means relative to -ATC control
+
+> python no_depletion_abundances.py
+  used to extract the fractional abundances in the -ATC controls
+
+> python post_process.py
+  sorts by Pval of log_conc coefficient
+  adds rank
+  computes Qval (multiple test correction)
+
+Spreadsheet.py
+  a utility used by post_process.py to read metadata file
+
+
+> Rsciprt logsigmoidfit.R <frac_abund_file> [<orf>, e.g. RVBD0667]
+
+> Rscript make_plots.R <frac_abund_file> [<gene>, e.g. rpoB]
+
+> Rscript SCV.R <frac_abund>
+ generates Rplots.pdf
+ shows a plot of the noise in the data as a function of abundance
+ standard coefficient of variation over replicates for each 
+
+> Rscript simulation.R
+ generates a plot showing non-linear effect of conc on abund depending on betaA
+
+
+
+example of main workflow
+------------------------
+
+> python extract_abund.py RIF 5 > frac_abund_RIF_D5.txt
+
+> Rsciprt logsigmoidfit.R frac_abund_RIF_D5.txt > logsigmoidfit.RIF_D5.txt
+ takes about a half hour
+
+> python post_process.py logsigmoidfit.RIF_D5.txt > logsigmoidfit.RIF_D5.results.txt
+ can open as spreadsheet in Excel
+ although ~1000 out of 4000 genes have Qval<0.05, note that rpoB is #106
+
+> Rscript make_plots.R frac_abund_RIF_D5.txt rpob
+ generates Rplots.pdf showing histograms of abund and conc-slopes for gene
+
+
+--------------------
+experiments with linear regression in STAN (10/18/22)
+
+regular linear regression (for 3 genes):
+> python pre_process_idx.py frac_abund_RIF_D5.txt rpoB atsD mmpL5 > data_idx.txt
+> python3 lin_regr_stan_multi_idx.py data_idx.txt
+
+Bayesian regression (for 102 genes):
+> python pre_process_idx.py frac_abund_RIF_D5.txt RVBD06 > data_RVBD06xx.txt
+ 102 genes; rpoB is 69
+> python3 bayes_regr_stan_multi_idx.py data_RVBD06xx.txt
+ took about an hour
